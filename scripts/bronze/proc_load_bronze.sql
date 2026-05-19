@@ -114,7 +114,7 @@ BEGIN
     batch_duration_seconds = EXTRACT(EPOCH FROM (batch_end_time - batch_start_time ));
     RAISE NOTICE '>> BACTH DURATION Duration: % seconds', batch_duration_seconds;
     EXCEPTION
-    	WHEN OTHERS THEN
-        	RAISE NOTICE 'ERROR WHEN LOADING bronze data';
+        WHEN OTHERS THEN
+            RAISE NOTICE 'ERROR WHEN LOADING bronze data';
 END;
 $$;
